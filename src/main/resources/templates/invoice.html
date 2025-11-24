@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #000;
+            margin: 40px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .invoice-title {
+            background-color: #2a4365;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+
+        .details {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .details div {
+            line-height: 1.5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        th, td {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f3f3f3;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .totals {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .totals td {
+            padding: 5px;
+        }
+
+        .totals .label {
+            text-align: right;
+        }
+
+        .total-box {
+            background-color: #2a4365;
+            color: white;
+            padding: 10px;
+            text-align: right;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <table>
+        <tbody>
+        <tr>
+            <td class="logo">
+                <img th:src="'data:image/png;base64,' + ${logoBase64}" alt="Logo" style="height: 80px;" />
+            </td>
+            <td>
+                <div class="invoice-title">INVOICE</div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="details">
+    <div>
+        <p><strong>Invoice Number:</strong> <span th:text="${invoice?.code}"></span></p>
+        <p><strong>Date:</strong> <span th:text="${date}"></span></p>
+    </div>
+</div>
+
+<div class="details">
+    <div>
+        <strong>Bill from:</strong><br/>
+        <span th:text="${fromCompany}"></span><br/>
+        <span th:text="${fromAddress}"></span><br/>
+        <span th:text="${fromPhone}"></span>
+    </div>
+    <div>
+        <strong>Bill to:</strong><br/>
+        <span th:text="${companyClientInfo?.name}">Customer Name</span><br/>
+        <span th:text="${companyClientInfo?.address}">Street Address, Zip Code</span><br/>
+        <span th:text="${companyClientInfo?.phone}">Phone Number</span>
+    </div>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Item</th>
+        <th class="right">Subtotal</th>
+        <th class="right">Tax</th>
+        <th class="right">Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.name}">Air Freight</td>
+        <td class="right" th:text="${item.subtotal}">$</td>
+        <td class="right" th:text="${item.tax}"></td>
+        <td class="right" th:text="${item.total}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<p style="margin-top: 30px;"><strong>Terms &amp; Conditions:</strong></p>
+<p th:text="${terms}"></p>
+
+<table class="totals">
+    <tr>
+        <td class="label">Subtotal:</td>
+        <td class="right" th:text="${invoice?.subtotal}">$3314.00</td>
+    </tr>
+    <tr>
+        <td class="label">Tax:</td>
+        <td class="right" th:text="${invoice?.tax}">$0.00</td>
+    </tr>
+</table>
+
+<div class="total-box">
+    Total <span th:text="${invoice?.total}">$3314.00</span>
+</div>
+
+</body>
+</html>

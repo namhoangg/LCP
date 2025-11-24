@@ -1,0 +1,40 @@
+{
+  "quote": [
+    {
+      "columnName": "quoteStatus",
+      "operandType": "STRING",
+      "clazz": "QuoteStatus"
+    },
+    {
+      "columnName": "client",
+      "operandType": "STRING"
+    },
+    {
+      "columnName": "origin",
+      "operandType": "STRING"
+    },
+    {
+      "columnName": "destination",
+      "operandType": "STRING"
+    },
+    {
+      "columnName": "validUntil",
+      "operandType": "DATE"
+    }
+  ],
+  "shipment": [
+    {
+      "columnName": "shipmentStatus",
+      "operandType": "STRING",
+      "clazz": "ShipmentStatusEnum"
+    },
+    {
+      "columnName": "etd",
+      "operandType": "DATE"
+    },
+    {
+      "columnName": "eta",
+      "operandType": "DATE"
+    }
+  ]
+}

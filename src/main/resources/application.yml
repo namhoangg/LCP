@@ -1,0 +1,72 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lcp
+    username: postgres
+    password: admin
+    initialization-mode: always
+
+    data: classpath:initSql/data.sql
+
+  redis:
+    database: 0
+  sql:
+    init:
+      mode: always
+      platform: postgresql
+      continue-on-error: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc.batch_size: 50 # Number of records to batch
+        order_inserts: true # Optimize insert order for batching
+        order_updates: true
+    show-sql: false # 👈 turn this off to prevent double SQL logs
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+
+auth:
+  jwtSecret: f6b3baf6e015d9f14b8bc0adba0b9241f2345b0ade83f048fb4bd83c6c01f499
+  jwtExpire: 1728000000 # 20 days
+
+springdoc:
+  swagger-ui:
+    enabled: true
+email:
+  username: noreply.freightflex@gmail.com
+  password: utck wxru gmxm tzyi
+  host: smtp.gmail.com
+  port: 465
+  protocol: smtps
+
+app:
+  frontendUrl: http://localhost:4200
+  tokenExpiration: 1800 # 30 minutes
+  defaultStaffCode: ST000001
+# MinIO Configuration
+minio:
+  endpoint: http://localhost:9000 # Changed from minio:9000 to localhost:9000 for local development
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: files
+company-config:
+  defaultCompanyName: "FreightFlex"
+
+logging:
+  level:
+    org.springframework.jdbc.datasource.init: DEBUG
+
+paypal:
+  client-id: AfqUJVr81j5H07LXCX_v_PAojZFwL8hPfuvK3HTzCatqlLyBR9IGY3XAGE6MnqE88nlihoA67Qi6aPpj
+  client-secret: EK2earxJkb5OBV5DZSgEOkhusqqnyXQyHbGYwyXveTRdBo8uZE2_BISOqueOEOXj0PoDkWIEq3AjIEVx
+  base-url: https://api-m.sandbox.paypal.com
+  return-url: http://localhost:8080/paypal/success
+  cancel-url: http://localhost:8080/paypal/cancel

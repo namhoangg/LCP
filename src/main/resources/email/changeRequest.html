@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>FreightFlex Quote Status Change</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 15px 30px;
+            border-bottom: 1px solid #0055aa;
+            position: relative;
+        }
+
+        .success-banner {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 20px 30px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 30px 0;
+        }
+
+        .confirmation-box {
+            background-color: #e8f5e9;
+            border: 1px solid #81c784;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .confirmation-box h3 {
+            color: #2e7d32;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .confirmation-details {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .confirmation-item {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        .confirmation-label {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .confirmation-value {
+            font-size: 16px;
+        }
+
+        .next-steps {
+            background-color: #e3f2fd;
+            border-left: 4px solid #0066cc;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        .next-steps h3 {
+            margin-top: 0;
+            color: #0066cc;
+        }
+
+        .next-steps ul {
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+
+        .next-steps li {
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            background-color: #f5f5f5;
+            padding: 15px 30px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+        }
+
+        /* Added styles for reason box */
+        .reason-box {
+            background-color: #fff3e0;
+            border: 1px solid #ffb74d;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .reason-box h3 {
+            color: #e65100;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .reason-content {
+            background-color: #fff;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>FreightFlex Quote #${quoteNumber}</h2>
+    </div>
+
+    <div class="content">
+        <div class="intro">
+            <p>Dear ${staffName},</p>
+            <p>Client ${clientName} has submitted a change request for Quote #${quoteNumber} with reason below.
+                Please review the request and contact the client discuss their requirements. If the changes can be
+                accommodated, update the quote in the system and notify the operations team of any scheduling
+                impacts. </p>
+        </div>
+
+        <!-- Added reason box -->
+        <div class="reason-box">
+            <h3>Change Request Reason</h3>
+            <div class="reason-content">
+                ${changeReason}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>This is an automated message from FreightFlex. Please do not reply to this email.</p>
+        <p>&copy; 2025 FreightFlex, Inc. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>

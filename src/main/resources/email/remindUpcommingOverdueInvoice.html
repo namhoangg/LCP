@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Invoice Due Reminder</title>
+</head>
+
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <!-- Header -->
+    <div style="background-color: #ffaa00; padding: 20px; text-align: center;">
+      <h1 style="color: #ffffff; margin: 0; font-size: 24px;">INVOICE DUE SOON</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div style="padding: 30px; color: #333333; font-size: 16px; line-height: 1.6;">
+      <p>Dear ${displayName},</p>
+
+      <p><strong>This is a friendly reminder that your invoice #${invoiceNumber} is due soon.</strong></p>
+
+      <div style="background-color: #fff8e6; border-left: 4px solid #ffaa00; padding: 15px; margin: 20px 0;">
+        <p style="margin: 0; font-weight: bold; color: #ffaa00;">Payment Due Date: ${dueDate}</p>
+        <p style="margin: 10px 0 0 0;">Amount Due: ${totalDebt} ${currency}</p>
+        <p style="margin: 5px 0 0 0;">Days Until Due: ${daysUntilDue}</p>
+      </div>
+
+      <p>If you have already made the payment, please disregard this notice and accept our thanks.</p>
+
+      <div style="background-color: #f0f0f0; padding: 15px; border-left: 4px solid #0066cc; margin: 20px 0;">
+        <p style="margin: 0 0 10px 0;"><strong>Invoice Summary:</strong></p>
+        <p style="margin: 0 0 5px 10px;">Invoice #: ${invoiceNumber}</p>
+        <p style="margin: 0 0 5px 10px;">Issue Date: ${issueDate}</p>
+        <p style="margin: 0 0 5px 10px;">Due Date: ${dueDate}</p>
+        <p style="margin: 0 0 5px 10px;">Total Amount: ${totalAmount} ${currency}</p>
+        <p style="margin: 0 0 5px 10px;">Paid Amount: ${totalAmountClientHasPaid} ${currency}</p>
+        <p style="margin: 0 0 5px 10px;">Debt: ${totalDebt} ${currency}</p>
+      </div>
+
+      <p>For any questions about this invoice or if you need to make payment arrangements, please contact our customer
+        service team at <strong>support@freightflex.com</strong>.</p>
+
+      <p>Thank you for your business.</p>
+
+      <p>Best regards,<br>
+        The FreightFlex Team</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #f0f0f0; padding: 20px; text-align: center; font-size: 12px; color: #777777;">
+      <p>This is an automated message. Please do not reply to this email.</p>
+      <p>&copy; 2025 FreightFlex, Inc. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+
+</html>

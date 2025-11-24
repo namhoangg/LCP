@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>[FreightFlex] New Quote Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 15px 30px;
+            border-bottom: 1px solid #0055aa;
+            position: relative;
+        }
+
+        .content {
+            padding: 20px 30px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 30px 0;
+        }
+
+        .notification-box {
+            background-color: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .notification-details {
+            margin-top: 15px;
+        }
+
+        .notification-item {
+            margin-bottom: 10px;
+        }
+
+        .notification-label {
+            font-weight: bold;
+            color: #555;
+            display: inline-block;
+            width: 140px;
+        }
+
+        .notification-value {
+            display: inline-block;
+        }
+
+        .message-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #0066cc;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        .footer {
+            background-color: #f5f5f5;
+            padding: 15px 30px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>FreightFlex Quote #${quoteNumber}</h2>
+    </div>
+
+    <div class="content">
+        <div class="intro">
+            <p>Dear ${staffName},</p>
+            <p>Client ${clientName} has updated a quotation request from ${origin} to ${destination}.</p>
+            <p>Code: #${quoteNumber}</p>
+            <p>Please review the request and provide a quotation at your earliest convenience.</p>
+        </div>
+
+
+        <div style="text-align: center; margin: 25px 0;">
+            <a href="${detailUrl}"
+               style="background-color: #0066cc; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;">View Detail</a>
+        </div>
+    <div class="footer">
+        <p>This is an automated message from FreightFlex. Please do not reply to this email.</p>
+        <p>&copy; 2025 FreightFlex, Inc. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>

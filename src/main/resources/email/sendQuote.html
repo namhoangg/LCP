@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>FreightFlex Quote Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 15px 30px;
+            border-bottom: 1px solid #0055aa;
+            position: relative;
+        }
+
+        .content {
+            padding: 20px 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        /* Section divider styling */
+        .section-divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0066cc;
+            display: inline-block;
+        }
+
+        .form-row {
+            display: flex;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .table th, .table td {
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .total-price {
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        .btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #0055aa;
+        }
+
+        .footer {
+            background-color: #f5f5f5;
+            padding: 15px 30px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+        }
+
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>FreightFlex Quote #${quoteNumber}</h2>
+    </div>
+
+    <div class="content">
+        <div class="intro">
+            <p>Dear ${clientName},</p>
+            <p>Thank you for your interest in FreightFlex services. We are pleased to provide you with the following
+                quote for your shipment. Please review the details below:</p>
+            <ul>
+                <li>Origin: ${origin}</li>
+                <li>Destination: ${destination}</li>
+                <li>Goods Kind: ${goodsKind}</li>
+                <li>Goods Description: ${goodsDescription}</li>
+                <li>Note: ${note}</li>
+                <li>Valid Until: ${validUntilDate}</li>
+            </ul>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="actions" style="text-align: center;">
+            <a class="btn" href="${viewDetailUrl}" style="font-size: 16px; padding: 12px 30px; color: white">View
+                Details</a>
+        </div>
+
+        <!-- Important Notice -->
+        <div style="background-color: #f9f9f9; border-left: 4px solid #0066cc; padding: 15px; margin-top: 25px; margin-bottom: 20px;">
+            <p style="margin: 0; font-weight: 500;"><strong>Important:</strong> This quote is valid until <strong>${validUntilDate}</strong>.
+                Please review and respond before this date to ensure availability of rates and services.</p>
+        </div>
+
+        <!-- Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Footer content -->
+        <div style="margin-top: 20px;">
+            <p>If you have any questions or need further clarification, please don't hesitate to contact your account
+                manager or our support team at <strong>support@freightflex.com</strong>.</p>
+            <p>We look forward to serving your freight needs.</p>
+            <p>Best regards,<br>
+                The FreightFlex Team</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>This is an automated message from FreightFlex. Please do not reply to this email.</p>
+        <p>&copy; 2025 FreightFlex, Inc. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>
